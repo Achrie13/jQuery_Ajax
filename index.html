@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品列表</title>
+
+    <!-- 引入 jQuery 和 ECharts -->
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/echarts.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script type="text/javascript">
+        $(function () {
+            getCategory();
+            load_data_2();
+        });
+
+        function get_productname() {
+            var selectedValue = $("#CategoryId").val();
+            if (selectedValue != -1)
+                getProducts(selectedValue);
+        }
+
+        function show_chart_1() {
+            var selectedValue = $("#ProductId").val();
+            if (selectedValue == -1) {
+                alert("请选择产品");
+                return;
+            }
+            else
+                load_data_1(selectedValue);
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div style="margin: 0; padding: 0; text-align: center;">
+        <h3 style="margin: 0;">产品列表</h3>
+    </div>
+    <div style="height: 30px; text-align: center;">
+        <div style="display: inline-block; margin: 20px 29px 0 0;">
+            选择型号:
+            <select name="CategoryId" id="CategoryId" onchange="get_productname()" size="1">
+                <option value="-1" selected="true">---请选择型号---</option>
+            </select>
+            选择产品:
+            <select name="ProductId" id="ProductId" size="1">
+                <option value="-1" selected="true">---请选择产品---</option>
+            </select>
+        </div>
+
+        <div class="container">
+            <div class="btn_show_echarts">
+                <button id="btn" onclick="show_chart_1()">点击生成图表</button>
+            </div>
+            <div id="chart_1" class="echarts" style="width: 600px; height: 400px;"></div> <!-- 确保有尺寸 -->
+            <div id="chart_2" class="echarts" style="width: 600px; height: 400px;"></div> <!-- 确保有尺寸 -->
+        </div>
+        <div class="container">
+
+        </div>
+    </div>
+</body>
+
+</html>

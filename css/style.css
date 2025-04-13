@@ -1,0 +1,49 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 水平居中 */
+    justify-content: center; /* 垂直居中 */
+    width: 100%;
+    height: 500px; /* 可以调整高度 */
+    background-color: antiquewhite;
+}
+
+.echarts {
+    width: 600px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.btn_show_echarts {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 100px;
+}
+
+
+button {
+    padding: 5px 10px; /* 调整按钮内边距 */
+    font-size: 14px; /* 调整字体大小 */
+}
+
+
+button:hover {
+    background-color: #45a049;
+    /* hover是鼠标悬浮在按钮上的颜色 */
+}
+
+.echarts_c1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
